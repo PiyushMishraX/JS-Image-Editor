@@ -115,5 +115,23 @@ main section .right .filter input{
     width: 100%;
     outline: none;
     margin: var(--margin-sm);
+
+    /* remove bydeafult styling of slider */
+    appearance: none;
 }
 
+
+/* slidernwhich we move */
+main section .right .filter input::-webkit-slider-thumb{
+    cursor: pointer;
+    /* hides it fully- */
+    appearance: none;
+    /* new styling- */
+    /* width: 20px; 
+    height: 20px; */
+    width: 16px; 
+    height: 16px;
+    border-radius: 50%;
+    background-color: red; 
+    margin-top: -8.5px;
+}
