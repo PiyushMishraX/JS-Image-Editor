@@ -13,7 +13,8 @@
     /* text colors */
     --text-primary-color: rgb(237,237,237);
     --text-secondary-color: rgb(200,200,200);
-    --text-tertiary-color: rgb(24,24,24);
+    --text-tertiary-color: rgb(150,150,150);
+    --text-active-color: rgb(24,24,24);
 
 
     /* paddings */
