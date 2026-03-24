@@ -6,6 +6,7 @@
 
 html,body{
     width: 100%;
+    color: var(--text-primary-color);
 }
 
 html{
@@ -43,6 +44,12 @@ main section{
 #download-btn{
     background-color: var(--bg-success-color);
     color: var(--text-primary-color);
+}
+
+main section .left{
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter-lg);
 }
 
 main section .top{
