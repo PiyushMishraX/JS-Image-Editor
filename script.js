@@ -11,6 +11,7 @@
 //     invert: 0,
 // }
 
+
 const filters = {
     brightness:{
         value: 100,
@@ -74,4 +75,15 @@ const filters = {
 }
 
 // hydrating(creating elements) html with js
-function createFilterElement[name, unit="%",min,max ]{ }
+function createFilterElement(name, unit="%",min,max){
+
+    const div = document.createElement("div")
+    div.classList.add("filter")
+
+    const input = document.createElement("input")
+    input.type = "range"
+    input.min = max
+    input.value = value
+    input.id = name
+
+}
