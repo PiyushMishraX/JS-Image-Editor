@@ -25,6 +25,8 @@ section{
 main section{
     width: 100%;
     padding: var(--padding-2xl);
+    display: flex;
+    gap: var(--gutter-lg);
 }
 
 .btn{
@@ -58,6 +60,8 @@ main section .left{
 }
 main section .right{
     width: 30%;
+    background-color: var(--bg-secondary-color) ;
+    padding: var(--padding-lg);
 }
 
 main section .top{
@@ -71,10 +75,10 @@ main section .bottom{
     background-color: var(--bg-secondary-color);
     width: 100%;
     padding: var(--padding-2xl);
-    aspect-ratio: 5/3; 
+    aspect-ratio: 5.3/3; 
     /* wisth adn height ration */
 
-    border-radius: var(--border-raditus-xl);
+    border-radius: var(--border-radius-xl);
     display: flex;
     justify-content: center;
     align-items: center;
