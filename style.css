@@ -120,6 +120,14 @@ main section .right .filter input{
     appearance: none;
 }
 
+/* track of slider */
+main section .right .filter input::-webkit-slider-runnable-track{
+    width: 100%;
+    background-color: var(--bg-active-color);
+    height: 3px;
+    border-radius: var(--border-radius-sm);
+
+}
 
 /* slidernwhich we move */
 main section .right .filter input::-webkit-slider-thumb{
