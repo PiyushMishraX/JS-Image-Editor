@@ -86,4 +86,10 @@ function createFilterElement(name, unit="%",min,max){
     input.value = value
     input.id = name
 
+    const p = document.createElement("p")
+    p.innerText = name
+
+    div.appendChild(p)
+    div.appendChild(input)
+
 }
