@@ -97,5 +97,7 @@ function createFilterElement(name, unit="%",min,max){
 // Object.keys(filters) => array with elements in form of strings , converted==> object -> array , elemetnts-> string
 
 Object.keys(filters)=(filter=>{
-    console.log(filter)
+    console.log(filters[filter]){
+        
+    }
 })
