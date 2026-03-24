@@ -21,55 +21,55 @@ const filters = {
         value: 100,
         min:  0,
         max:  200,
-        
+        unit: "%",
     } ,
     exposure: {
         value: 100,
         min:  0,
         max:  200,
-        
+        unit: "%",
     } ,
     stauration: {
         value: 100,
         min:  0,
         max:  200,
-        
+        unit: "%",
     } ,
     hueRotation: {
         value: 0,
         min:  0,
         max:  360,
-        deg",
+        unit: "deg",
     } ,
     blut: {
         value: 0,
         min:  0,
         max:  20,
-        px",
+        unit: "px",
     },
     grayScale: {
         value: 0,
         min:  0,
         max:  100,
-        
+        unit: "%",
     },
     sepia: {
         value: 0,
         min:  0,
         max:  100,
-        
+        unit: "%",
     },
     opacity: {
         value: 100,
         min:  0,
         max:  100,
-        
+        unit: "%",
     },
     invert: {
         value: 0,
         min:  0,
         max:  20,
-        
+        unit: "%",
     },
 }
 
