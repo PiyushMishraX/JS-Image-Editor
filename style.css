@@ -35,10 +35,19 @@ main section{
     cursor: pointer;
 }
 
+#reset-btn{
+    background-color: var(--bg-danger-color);
+    color: var(--text-primary-color);
+}
+
+#download-btn{
+    background-color: var(--bg-success-color);
+    color: var(--text-primary-color);
+}
+
 main section .top{
     display: flex;
     /* justify-content: space-between; */
     align-items: center;
     gap: var(--gutter-md);
-    
 }

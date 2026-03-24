@@ -8,7 +8,9 @@
     --bg-primary-color: rgb(17,17,17);
     --bg-secondary-color: rgb(34,34,34);
     /* jab bg ke upar koi aur element create kare uske liye */
-    --bg-active-color: rgb(255,69,0);
+    --bg-active-color: rgb(233,233,233);
+    --bg-danger-color: rgb(200,50,50);
+    --bg-success-color: rgb(30,167,30);
 
     /* text colors */
     --text-primary-color: rgb(237,237,237);
