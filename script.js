@@ -455,9 +455,24 @@ const presets = {
 };
 
 Object.keys(presets).forEach(presetName =>{
-    console.log(presetName)
+    // console.log(presetName)
     const presetButton = document.createElement("button")
     presetButton.classList.add("btn")
     presetButton.innerText = presetName
     presetsContainer.appendChild(presetButton)
+
+    presetButton.addEventListener("click",()=>{
+
+        const preset = presets[presetName]
+        // console.log(preset)
+        
+        Object.keys(preset).forEach(filterName =>{
+            filters[filterName].value = preset[filterName]
+
+            // console.log(filters[filterName],filterName,preset[filterName])
+            // {value: 100, min: 0, max: 200, unit: '%'} 'brightness' 100
+        })
+
+        applyFilters()
+    })
 })
