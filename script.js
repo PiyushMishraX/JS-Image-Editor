@@ -474,5 +474,9 @@ Object.keys(presets).forEach(presetName =>{
         })
 
         applyFilters()
+
+        // change sliders too -
+        filterContainer.innerHTML = ""
+        createFilters()
     })
 })
