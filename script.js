@@ -83,6 +83,9 @@ const imageInput = document.querySelector("#image-input")
 // convas context -> what is happening in canvas used for change deletion eidting in canvas etc
 const canvasCtx = imageCanvas.getContext("2d") // can use 3d but for now using 2d
 
+let file =null
+let image = null
+
 // hydrating(creating elements) html with js
 function createFilterElement(name, unit="%",value,min,max){
 
@@ -131,6 +134,9 @@ Object.keys(filters).forEach(key=>{
 imageInput.addEventListener("change",(event)=>{
     // console.log("change event fired")
     const file = event.target.files[0]
+    // remove placeholder image
+    const imagePlaceholder = document.querySelector(".placeholder")
+    imagePlaceholder.style.display = "none"
 
     // console.log(file)
     // add image ->
@@ -139,6 +145,8 @@ imageInput.addEventListener("change",(event)=>{
 
     //only when image is loaded then this callback runs to show image on canvas
     img.onload = ()=>{
+        image = img
+
         // method  fix - bigger canvas
         imageCanvas.width = img.width
         imageCanvas.height = img.height
@@ -148,5 +156,15 @@ imageInput.addEventListener("change",(event)=>{
 
     }
 
-
 })
+
+//  we have to redraw image after filter applying
+
+// temperory to see effects
+function applyBlur() {
+    // canvasCtx.filter = `blur(500px)`
+    // canvasCtx.filter = `blur(5px)`
+    
+    canvasCtx.filter = `brightness(1750%)`
+    canvasCtx.drawImage(image, 0, 0) 
+}
