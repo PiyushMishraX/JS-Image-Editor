@@ -74,15 +74,18 @@ const filters = {
     },
 }
 
+const filterContainer = document.querySelector(".filters");
+
 // hydrating(creating elements) html with js
-function createFilterElement(name, unit="%",min,max){
+function createFilterElement(name, unit="%",value,min,max){
 
     const div = document.createElement("div")
     div.classList.add("filter")
 
     const input = document.createElement("input")
     input.type = "range"
-    input.min = max
+    input.min = min
+    input.max = max
     input.value = value
     input.id = name
 
@@ -92,12 +95,27 @@ function createFilterElement(name, unit="%",min,max){
     div.appendChild(p)
     div.appendChild(input)
 
+    return div // return div so it's value can be used in filterELement
 }
 
 // Object.keys(filters) => array with elements in form of strings , converted==> object -> array , elemetnts-> string
+// object.keys -> array of keys of the object
+// Object.keys(filters).forEach(filter=>{
+//     console.log(filter) // print the element name
+//     console.log(typeof filter)
+//     console.log(filters[filter]) // print filters[name_of_ele] -> if name is "brightness" than prints filters["brightness"] ->  brightness:{ value: 100, min:  0, max:  200,}, }
+//      filters[filter] is also an object
 
-Object.keys(filters)=(filter=>{
-    console.log(filters[filter]){
-        
-    }
+// })
+
+// console.log(filters["brightness"]) prints the element 
+
+
+Object.keys(filters).forEach(key=>{
+    // console.log(key, filters[key]) 
+    const filterElement = createFilterElement(key,filters[key].unit,filters[key].value,filters[key].min,filters[key].max)
+    // console.log(filterElement)
+    console.dir(filterElement)
+
+    filterContainer.appendChild(filterElement);
 })
