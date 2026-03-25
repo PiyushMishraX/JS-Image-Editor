@@ -312,3 +312,142 @@ downloadBtn.addEventListener("click", ()=>{
 
     link.click() // downloadBtn ke event click se a tag mai click kar diya , aur uski functionality chalu ho gayi 
 })
+
+
+//  PRESETS
+
+const presets = {
+    drama: {
+        brightness: 90,
+        contrast: 150,
+        saturation: 60,
+        sepia: 10,
+        hueRotation: 0,
+        blur: 0,
+        grayscale: 0,
+        invert: 0,
+        opacity: 100
+    },
+    vintage: {
+        brightness: 110,
+        contrast: 90,
+        saturation: 110,
+        sepia: 40,
+        hueRotation: 0,
+        blur: 0,
+        grayscale: 0,
+        invert: 0,
+        opacity: 100
+    },
+    oldSchool: {
+        brightness: 105,
+        contrast: 130,
+        grayscale: 100,
+        sepia: 15, // Adds a slight paper-aging effect
+        saturation: 0,
+        hueRotation: 0,
+        blur: 0,
+        invert: 0,
+        opacity: 100
+    },
+    noir: {
+        brightness: 80,
+        contrast: 180,
+        grayscale: 100,
+        saturation: 0,
+        sepia: 0,
+        hueRotation: 0,
+        blur: 0,
+        invert: 0,
+        opacity: 100
+    },
+    summer: {
+        brightness: 105,
+        contrast: 110,
+        saturation: 140,
+        hueRotation: -5,
+        sepia: 5,
+        grayscale: 0,
+        blur: 0,
+        invert: 0,
+        opacity: 100
+    },
+    dreamy: {
+        brightness: 115,
+        contrast: 85,
+        saturation: 110,
+        blur: 1, // Softens the image slightly
+        sepia: 10,
+        hueRotation: 0,
+        grayscale: 0,
+        invert: 0,
+        opacity: 100
+    },
+    warmSunset: {
+        brightness: 105,
+        contrast: 110,
+        saturation: 130,
+        sepia: 30,
+        hueRotation: -10, // Shifts colors toward orange/red
+        blur: 0,
+        grayscale: 0,
+        invert: 0,
+        opacity: 100
+    },
+    coolTone: {
+        brightness: 100,
+        contrast: 105,
+        saturation: 80,
+        hueRotation: 180, // Flips to the blue/cyan side of the wheel
+        sepia: 0,
+        grayscale: 5,
+        blur: 0,
+        invert: 0,
+        opacity: 100
+    },
+    faded: {
+        brightness: 110,
+        contrast: 80, // Lower contrast creates that "flat" look
+        saturation: 85,
+        opacity: 90,
+        sepia: 10,
+        hueRotation: 0,
+        blur: 0,
+        grayscale: 0,
+        invert: 0
+    },
+    retroPop: {
+        brightness: 110,
+        contrast: 140,
+        saturation: 180, // Super vibrant colors
+        hueRotation: 10,
+        sepia: 0,
+        grayscale: 0,
+        blur: 0,
+        invert: 0,
+        opacity: 100
+    },
+    cyberpunk: {
+        brightness: 90,
+        contrast: 130,
+        saturation: 150,
+        hueRotation: -30, // Targets pinks and purples
+        invert: 5, // Adds a slight metallic edge to shadows
+        sepia: 0,
+        grayscale: 0,
+        blur: 0,
+        opacity: 100
+    },
+    softGlow: {
+        brightness: 115,
+        contrast: 95,
+        saturation: 110,
+        blur: 2, // The "Glow" effect is achieved via subtle blur
+        opacity: 100,
+        sepia: 5,
+        hueRotation: 0,
+        grayscale: 0,
+        invert: 0
+    }
+
+};
