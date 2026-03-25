@@ -104,12 +104,14 @@ main section .bottom .placeholder p{
 }
 
 main section .right {
+    /* transform: scale(0.8); */
     display: flex;
     flex-direction: column;
     gap: var(--gutter-lg);
 }
 
 main section .right .filters{
+    /* transform: scale(0.8); */
     display: flex;
     flex-direction: column;
     gap: var(--gutter-md);
@@ -118,6 +120,13 @@ main section .right .filters{
 main section .right .filter{
     width: 100%;
 
+    /* add max height so elements will show in one page */
+    max-height: 40px; 
+
+}
+
+main section .right .filter p{
+    margin-bottom: 3px;
 }
 main section .right .filter input{
     width: 100%;
@@ -152,3 +161,4 @@ main section .right .filter input::-webkit-slider-thumb{
     background-color: red; 
     margin-top: -8.5px;
 }
+

@@ -76,6 +76,11 @@ const filters = {
 
 const filterContainer = document.querySelector(".filters");
 
+// Canvas
+const imageCanvas = document.querySelector(".image-canvas");
+// inputes image
+const imageInput = document.querySelector("#image-input")
+
 // hydrating(creating elements) html with js
 function createFilterElement(name, unit="%",value,min,max){
 
@@ -115,7 +120,12 @@ Object.keys(filters).forEach(key=>{
     // console.log(key, filters[key]) 
     const filterElement = createFilterElement(key,filters[key].unit,filters[key].value,filters[key].min,filters[key].max)
     // console.log(filterElement)
-    console.dir(filterElement)
+    // console.dir(filterElement)
 
     filterContainer.appendChild(filterElement);
+})
+
+// at start value is null and when user selects any image then this event runs  
+imageInput.addEventListener("change",(event)=>{
+    console.log("change event fired")
 })
