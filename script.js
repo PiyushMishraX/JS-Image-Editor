@@ -12,7 +12,7 @@
 // }
 
 
-const filters = {
+let filters = {
     brightness:{
         value: 100,
         min:  0,
@@ -83,7 +83,10 @@ const imageCanvas = document.querySelector("#image-canvas");
 const imageInput = document.querySelector("#image-input")
 
 // canvas context -> what is happening in canvas used for change deletion eidting in canvas etc
-const canvasCtx = imageCanvas.getContext("2d") // can use 3d but for now using 2d 
+const canvasCtx = imageCanvas.getContext("2d") // can use 3d but for now using 2d
+
+// reset-Btn
+const resetBtn = document.querySelector("#reset-btn");
 
 let file =null
 let image = null
@@ -223,3 +226,69 @@ function applyFilters(){
     `.trim() // new any extra space / new line 
    canvasCtx.drawImage(image, 0, 0)
 }
+
+resetBtn.addEventListener("click",()=>{
+    filters = {
+    brightness:{
+        value: 100,
+        min:  0,
+        max:  200,
+        unit: "%"
+    }, 
+    contrast: {
+        value: 100,
+        min:  0,
+        max:  200,
+        unit: "%",
+    } ,
+    // exposure: { // it is changed using browser and css and canvas see exposure as nother brightness and their is no exposure sepearelty in that
+    //     value: 100,
+    //     min:  0,
+    //     max:  200,
+    //     unit: "%",
+    // } ,
+    saturation: {
+        value: 100,
+        min:  0,
+        max:  200,
+        unit: "%",
+    } ,
+    hueRotation: {
+        value: 0,
+        min:  0,
+        max:  360,
+        unit: "deg",
+    } ,
+    blur: {
+        value: 0,
+        min:  0,
+        max:  20,
+        unit: "px",
+    },
+    grayscale: {
+        value: 0,
+        min:  0,
+        max:  100,
+        unit: "%",
+    },
+    sepia: {
+        value: 0,
+        min:  0,
+        max:  100,
+        unit: "%",
+    },
+    opacity: {
+        value: 100,
+        min:  0,
+        max:  100,
+        unit: "%",
+    },
+    invert: {
+        value: 0,
+        min:  0,
+        max:  20,
+        unit: "%",
+    },
+}
+applyFilters();
+})
