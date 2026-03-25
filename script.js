@@ -42,7 +42,7 @@ const filters = {
         max:  360,
         unit: "deg",
     } ,
-    blut: {
+    blur: {
         value: 0,
         min:  0,
         max:  20,
@@ -139,10 +139,10 @@ imageInput.addEventListener("change",(event)=>{
 
     //only when image is loaded then this callback runs to show image on canvas
     img.onload = ()=>{
-        // method 1 fix - bigger canvas
+        // method  fix - bigger canvas
         imageCanvas.width = img.width
         imageCanvas.height = img.height
-        // problem if image is too big such as 4k images
+        // problem if image is too big such as 4k images breaks ui - so w give max height and width ot canvas ( gave in css)
 
         canvasCtx.drawImage(img, 0, 0)  // image is big but canvas is small // it fits as much as it can
 

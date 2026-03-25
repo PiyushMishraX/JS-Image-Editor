@@ -162,3 +162,10 @@ main section .right .filter input::-webkit-slider-thumb{
     margin-top: -8.5px;
 }
 
+canvas{
+    background-color: red;
+
+    /* give fixed max height and width to canvas */
+    max-width: 600px;
+    max-height: 800px;
+}
