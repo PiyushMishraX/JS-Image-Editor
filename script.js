@@ -91,6 +91,9 @@ const resetBtn = document.querySelector("#reset-btn");
 // download
 const downloadBtn = document.querySelector("#download-btn")
 
+// presets 
+const presetsContainer = document.querySelector(".presets")
+
 let file =null
 let image = null
 
@@ -343,7 +346,7 @@ const presets = {
         brightness: 105,
         contrast: 130,
         grayscale: 100,
-        sepia: 15, // Adds a slight paper-aging effect
+        sepia: 15,
         saturation: 0,
         hueRotation: 0,
         blur: 0,
@@ -376,7 +379,7 @@ const presets = {
         brightness: 115,
         contrast: 85,
         saturation: 110,
-        blur: 1, // Softens the image slightly
+        blur: 1,
         sepia: 10,
         hueRotation: 0,
         grayscale: 0,
@@ -388,7 +391,7 @@ const presets = {
         contrast: 110,
         saturation: 130,
         sepia: 30,
-        hueRotation: -10, // Shifts colors toward orange/red
+        hueRotation: -10,
         blur: 0,
         grayscale: 0,
         invert: 0,
@@ -398,7 +401,7 @@ const presets = {
         brightness: 100,
         contrast: 105,
         saturation: 80,
-        hueRotation: 180, // Flips to the blue/cyan side of the wheel
+        hueRotation: 180,
         sepia: 0,
         grayscale: 5,
         blur: 0,
@@ -407,7 +410,7 @@ const presets = {
     },
     faded: {
         brightness: 110,
-        contrast: 80, // Lower contrast creates that "flat" look
+        contrast: 80,
         saturation: 85,
         opacity: 90,
         sepia: 10,
@@ -419,7 +422,7 @@ const presets = {
     retroPop: {
         brightness: 110,
         contrast: 140,
-        saturation: 180, // Super vibrant colors
+        saturation: 180,
         hueRotation: 10,
         sepia: 0,
         grayscale: 0,
@@ -431,8 +434,8 @@ const presets = {
         brightness: 90,
         contrast: 130,
         saturation: 150,
-        hueRotation: -30, // Targets pinks and purples
-        invert: 5, // Adds a slight metallic edge to shadows
+        hueRotation: -30,
+        invert: 5,
         sepia: 0,
         grayscale: 0,
         blur: 0,
@@ -442,12 +445,19 @@ const presets = {
         brightness: 115,
         contrast: 95,
         saturation: 110,
-        blur: 2, // The "Glow" effect is achieved via subtle blur
+        blur: 2,
         opacity: 100,
         sepia: 5,
         hueRotation: 0,
         grayscale: 0,
         invert: 0
     }
-
 };
+
+Object.keys(presets).forEach(presetName =>{
+    console.log(presetName)
+    const presetButton = document.createElement("button")
+    presetButton.classList.add("btn")
+    presetButton.innerText = presetName
+    presetsContainer.appendChild(presetButton)
+})
