@@ -304,7 +304,7 @@ resetBtn.addEventListener("click",()=>{
 })
 
 downloadBtn.addEventListener("click", ()=>{
-    const link = document.createElement("a") 
+    const link = document.createElement("a") // browser mai chize sirf a tag se hi download hoti hai to use banaya link naam se
     link.download = "edited-image.png" .toDataURL() //
     link.click()
 })
