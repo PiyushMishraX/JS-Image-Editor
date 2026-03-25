@@ -17,20 +17,21 @@ const filters = {
         value: 100,
         min:  0,
         max:  200,
+        unit: "%"
     }, 
-    constrast: {
+    contrast: {
         value: 100,
         min:  0,
         max:  200,
         unit: "%",
     } ,
-    exposure: {
-        value: 100,
-        min:  0,
-        max:  200,
-        unit: "%",
-    } ,
-    stauration: {
+    // exposure: { // it is changed using browser and css and canvas see exposure as nother brightness and their is no exposure sepearelty in that
+    //     value: 100,
+    //     min:  0,
+    //     max:  200,
+    //     unit: "%",
+    // } ,
+    saturation: {
         value: 100,
         min:  0,
         max:  200,
@@ -48,7 +49,7 @@ const filters = {
         max:  20,
         unit: "px",
     },
-    grayScale: {
+    grayscale: {
         value: 0,
         min:  0,
         max:  100,
@@ -105,6 +106,23 @@ function createFilterElement(name, unit="%",value,min,max){
     div.appendChild(p)
     div.appendChild(input)
 
+    // event listner for filter
+    input.addEventListener("input",(event)=>{
+        // console.log(input.value);
+        // console.log(filters);
+
+        // add iput change in filters elements
+        // console.log(name)
+        // console.log(filters[name])
+
+        filters[name].value = input.value // change value with slider , on filters object
+        console.log(name, filters[name].value)
+
+        // apply filters
+        applyFilters();
+
+    })
+
     return div // return div so it's value can be used in filterELement
 }
 
@@ -158,13 +176,43 @@ imageInput.addEventListener("change",(event)=>{
 
 })
 
+
 //  we have to redraw image after filter applying
 
 // temperory to see effects
-function applyBlur() {
-    // canvasCtx.filter = `blur(500px)`
-    // canvasCtx.filter = `blur(5px)`
-    
-    canvasCtx.filter = `brightness(1750%)`
-    canvasCtx.drawImage(image, 0, 0) 
+// function applyBlur() {
+//     // canvasCtx.filter = `blur(500px)`
+//     // canvasCtx.filter = `blur(5px)`  
+//     canvasCtx.filter = `brightness(1750%)`
+//     canvasCtx.drawImage(image, 0, 0)  // reload image with changes
+// }
+
+function applyFilters(){
+    // the filters names in canvas filter should match cdn documentation not your names in filters
+//    canvasCtx.filter = `
+//    brightness(${filters.brightness.value}${filters.brightness.unit}) 
+//    contrast(${filters.contrast.value}${filters.contrast.unit}) 
+//    exposure(${filters.exposure.value}${filters.exposure.unit}) 
+//    saturation(${filters.saturation.value}${filters.saturation.unit}) 
+//    hue-rotate(${filters.hueRotation.value}${filters.hueRotation.unit}) 
+//    blur(${filters.blur.value}${filters.blur.unit}) 
+//    grayscale(${filters.grayscale.value}${filters.grayscale.unit}) 
+//    sepia(${filters.sepia.value}${filters.sepia.unit}) 
+//    opacity(${filters.opacity.value}${filters.opacity.unit}) 
+//    invert(${filters.invert.value}${filters.invert.unit}) 
+//    ` 
+
+// opacity not working because canvas create new image on top of old one so the opacityis chnaging but can not be seen bcz original img is below it already
+   canvasCtx.filter = `
+   brightness(${filters.brightness.value}${filters.brightness.unit})
+   contrast(${filters.contrast.value}${filters.contrast.unit}) 
+   saturate(${filters.saturation.value}${filters.saturation.unit}) 
+   hue-rotate(${filters.hueRotation.value}${filters.hueRotation.unit}) 
+   blur(${filters.blur.value}${filters.blur.unit}) 
+   grayscale(${filters.grayscale.value}${filters.grayscale.unit}) 
+   sepia(${filters.sepia.value}${filters.sepia.unit}) 
+   opacity(${filters.opacity.value}${filters.opacity.unit})
+   invert(${filters.invert.value}${filters.invert.unit}) 
+    ` 
+   canvasCtx.drawImage(image, 0, 0)
 }
