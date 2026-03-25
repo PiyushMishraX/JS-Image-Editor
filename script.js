@@ -139,7 +139,13 @@ imageInput.addEventListener("change",(event)=>{
 
     //only when image is loaded then this callback runs to show image on canvas
     img.onload = ()=>{
-        canvasCtx.drawImage(img, 0, 0)
+        // method 1 fix - bigger canvas
+        imageCanvas.width = img.width
+        imageCanvas.height = img.height
+        // problem if image is too big such as 4k images
+
+        canvasCtx.drawImage(img, 0, 0)  // image is big but canvas is small // it fits as much as it can
+
     }
 
 
