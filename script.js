@@ -88,6 +88,9 @@ const canvasCtx = imageCanvas.getContext("2d") // can use 3d but for now using 2
 // reset-Btn
 const resetBtn = document.querySelector("#reset-btn");
 
+// download
+const downloadBtn = document.querySelector("#download-btn")
+
 let file =null
 let image = null
 
@@ -298,4 +301,10 @@ resetBtn.addEventListener("click",()=>{
     filterContainer.innerHTML =""
     createFilters(); // reset the inputfields to originasls
 
+})
+
+downloadBtn.addEventListener("click", ()=>{
+    const link = document.createElement("a") 
+    link.download = "edited-image.png" .toDataURL() //
+    link.click()
 })
