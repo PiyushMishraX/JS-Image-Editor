@@ -81,8 +81,9 @@ const filterContainer = document.querySelector(".filters");
 const imageCanvas = document.querySelector("#image-canvas");
 // inputes image
 const imageInput = document.querySelector("#image-input")
-// convas context -> what is happening in canvas used for change deletion eidting in canvas etc
-const canvasCtx = imageCanvas.getContext("2d") // can use 3d but for now using 2d
+
+// canvas context -> what is happening in canvas used for change deletion eidting in canvas etc
+const canvasCtx = imageCanvas.getContext("2d") // can use 3d but for now using 2d 
 
 let file =null
 let image = null
@@ -188,6 +189,7 @@ imageInput.addEventListener("change",(event)=>{
 // }
 
 function applyFilters(){
+
     // the filters names in canvas filter should match cdn documentation not your names in filters
 //    canvasCtx.filter = `
 //    brightness(${filters.brightness.value}${filters.brightness.unit}) 
@@ -202,7 +204,11 @@ function applyFilters(){
 //    invert(${filters.invert.value}${filters.invert.unit}) 
 //    ` 
 
+
 // opacity not working because canvas create new image on top of old one so the opacityis chnaging but can not be seen bcz original img is below it already
+// drawImage draws new image on top eveytime it is called
+// so we have to clear the canas first using clear RECT
+    canvasCtx.clearRect(0, 0, imageCanvas.width, imageCanvas.height);;
    canvasCtx.filter = `
    brightness(${filters.brightness.value}${filters.brightness.unit})
    contrast(${filters.contrast.value}${filters.contrast.unit}) 
