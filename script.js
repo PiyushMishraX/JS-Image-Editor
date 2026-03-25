@@ -77,7 +77,7 @@ const filters = {
 const filterContainer = document.querySelector(".filters");
 
 // Canvas
-const imageCanvas = document.querySelector(".image-canvas");
+const imageCanvas = document.querySelector("#image-canvas");
 // inputes image
 const imageInput = document.querySelector("#image-input")
 // convas context -> what is happening in canvas used for change deletion eidting in canvas etc
@@ -139,7 +139,7 @@ imageInput.addEventListener("change",(event)=>{
 
     //only when image is loaded then this callback runs to show image on canvas
     img.onload = ()=>{
-        
+        canvasCtx.drawImage(img, 0, 0)
     }
 
 
