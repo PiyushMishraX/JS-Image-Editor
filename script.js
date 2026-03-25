@@ -305,6 +305,7 @@ resetBtn.addEventListener("click",()=>{
 
 downloadBtn.addEventListener("click", ()=>{
     const link = document.createElement("a") // browser mai chize sirf a tag se hi download hoti hai to use banaya link naam se
-    link.download = "edited-image.png" .toDataURL() //
+    link.download = "edited-image.png" // a tag ke download attribute ki value set kari "edited-image.png" // to a tag ko pata bhi chal jata hai ki link open nahi karna hai , download karna hai
+    link.href = imageCanvas.toDataURL() //
     link.click()
 })
