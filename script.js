@@ -127,5 +127,14 @@ Object.keys(filters).forEach(key=>{
 
 // at start value is null and when user selects any image then this event runs  
 imageInput.addEventListener("change",(event)=>{
-    console.log("change event fired")
+    // console.log("change event fired")
+    const file = event.target.files[0]
+
+    // console.log(file)
+    // add image ->
+    const img = new Image() // create image  using js instead of html
+    img.src = URL.createObjectURL(file) // converts user image to url
+
+
+
 })
