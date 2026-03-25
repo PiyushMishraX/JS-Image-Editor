@@ -122,6 +122,7 @@ main section .right .filter{
 
     /* add max height so elements will show in one page */
     max-height: 40px; 
+    /* max-height: 30px;  */
 
 }
 
@@ -174,4 +175,12 @@ canvas{
     max-width: 90%;
     /* max-height: 80vh; */
     max-height: 70vh;
+}
+
+/* scss used in development ,sassy css */
+
+.presets{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gutter-sm);
 }
