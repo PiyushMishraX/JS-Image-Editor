@@ -24,7 +24,8 @@ section{
 /* section inside main */
 main section{
     width: 100%;
-    padding: var(--padding-2xl);
+    /* padding: var(--padding-2xl); */
+    padding: var(--padding-xl);
     display: flex;
     gap: var(--gutter-lg);
 }
@@ -105,16 +106,23 @@ main section .bottom .placeholder p{
 main section .right {
     display: flex;
     flex-direction: column;
+    gap: var(--gutter-lg);
+}
+
+main section .right .filters{
+    display: flex;
+    flex-direction: column;
     gap: var(--gutter-md);
 }
 
 main section .right .filter{
     width: 100%;
+
 }
 main section .right .filter input{
     width: 100%;
     outline: none;
-    margin: var(--margin-sm);
+    /* margin: var(--margin-sm); */
 
     /* remove bydeafult styling of slider */
     appearance: none;
@@ -122,6 +130,7 @@ main section .right .filter input{
 
 /* track of slider */
 main section .right .filter input::-webkit-slider-runnable-track{
+    appearance: none;
     width: 100%;
     background-color: var(--bg-active-color);
     height: 3px;
