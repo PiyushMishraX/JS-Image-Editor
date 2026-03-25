@@ -142,8 +142,7 @@ function createFilterElement(name, unit="%",value,min,max){
 
 // console.log(filters["brightness"]) prints the element 
 
-function createFilters(params) {
-    
+function createFilters(params) {    
     Object.keys(filters).forEach(key=>{
         // console.log(key, filters[key]) 
         const filterElement = createFilterElement(key,filters[key].unit,filters[key].value,filters[key].min,filters[key].max)
@@ -153,6 +152,8 @@ function createFilters(params) {
         filterContainer.appendChild(filterElement);
     })
 }
+
+createFilters();
 
 // at start value is null and when user selects any image then this event runs  
 imageInput.addEventListener("change",(event)=>{
@@ -295,5 +296,6 @@ resetBtn.addEventListener("click",()=>{
     applyFilters();
 
     filterContainer.innerHTML =""
+    createFilters(); // reset the inputfields to originasls
 
 })
