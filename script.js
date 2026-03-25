@@ -80,6 +80,8 @@ const filterContainer = document.querySelector(".filters");
 const imageCanvas = document.querySelector(".image-canvas");
 // inputes image
 const imageInput = document.querySelector("#image-input")
+// convas context -> what is happening in canvas used for change deletion eidting in canvas etc
+const canvasCtx = imageCanvas.getContext("2d") // can use 3d but for now using 2d
 
 // hydrating(creating elements) html with js
 function createFilterElement(name, unit="%",value,min,max){
@@ -135,6 +137,10 @@ imageInput.addEventListener("change",(event)=>{
     const img = new Image() // create image  using js instead of html
     img.src = URL.createObjectURL(file) // converts user image to url
 
+    //only when image is loaded then this callback runs to show image on canvas
+    img.onload = ()=>{
+        
+    }
 
 
 })
