@@ -142,15 +142,17 @@ function createFilterElement(name, unit="%",value,min,max){
 
 // console.log(filters["brightness"]) prints the element 
 
-
-Object.keys(filters).forEach(key=>{
-    // console.log(key, filters[key]) 
-    const filterElement = createFilterElement(key,filters[key].unit,filters[key].value,filters[key].min,filters[key].max)
-    // console.log(filterElement)
-    // console.dir(filterElement)
-
-    filterContainer.appendChild(filterElement);
-})
+function createFilters(params) {
+    
+    Object.keys(filters).forEach(key=>{
+        // console.log(key, filters[key]) 
+        const filterElement = createFilterElement(key,filters[key].unit,filters[key].value,filters[key].min,filters[key].max)
+        // console.log(filterElement)
+        // console.dir(filterElement)
+    
+        filterContainer.appendChild(filterElement);
+    })
+}
 
 // at start value is null and when user selects any image then this event runs  
 imageInput.addEventListener("change",(event)=>{
@@ -289,6 +291,9 @@ resetBtn.addEventListener("click",()=>{
         max:  20,
         unit: "%",
     },
-}
-applyFilters();
+    }
+    applyFilters();
+
+    filterContainer.innerHTML =""
+
 })
