@@ -156,6 +156,7 @@ imageInput.addEventListener("change",(event)=>{
     // remove placeholder image
     const imagePlaceholder = document.querySelector(".placeholder")
     imagePlaceholder.style.display = "none"
+    imageCanvas.style.display = "block"
 
     // console.log(file)
     // add image ->
@@ -219,6 +220,6 @@ function applyFilters(){
    sepia(${filters.sepia.value}${filters.sepia.unit}) 
    opacity(${filters.opacity.value}${filters.opacity.unit})
    invert(${filters.invert.value}${filters.invert.unit}) 
-    ` 
+    `.trim() // new any extra space / new line 
    canvasCtx.drawImage(image, 0, 0)
 }
