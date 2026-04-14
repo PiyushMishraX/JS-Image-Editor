@@ -66,7 +66,9 @@ main section .bottom{
     background-color: var(--bg-secondary-color);
     width: 100%;
     padding: var(--padding-2xl);
-    aspect-ratio: 5.3/3; 
+    min-height: 400px;
+    height: 85vh;
+    /* height: 90%; */
     border-radius: var(--border-radius-xl);
     display: flex;
     justify-content: center;
@@ -92,13 +94,15 @@ main section .bottom .placeholder p{
 main section .right {
     display: flex;
     flex-direction: column;
-    gap: var(--gutter-lg);
+    gap: var(--gutter-sm2);
+    /* background-color: rgb(242, 26, 26); */
+    padding-bottom: 35px;
 }
 
 main section .right .filters{
     display: flex;
     flex-direction: column;
-    gap: var(--gutter-md);
+    gap: var(--gutter-sm2);
 }
 
 main section .right .filter{
@@ -144,4 +148,15 @@ canvas{
     display: flex;
     flex-wrap: wrap;
     gap: var(--gutter-sm);
+}
+
+.btn-pre{
+    padding: var(--padding-sm0) var(--padding-lg);
+    border: none;
+    outline: none;
+    border-radius: var(--border-radius-md);
+    background-color: var(--bg-active-color);
+    cursor: pointer;
+    color: var(--text-active-color);
+    font-size: 14px;
 }

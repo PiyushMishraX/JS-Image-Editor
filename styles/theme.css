@@ -1,18 +1,31 @@
 :root {
     /* bg colors */
-    --bg-primary-color: rgb(17,17,17);
+    /* --bg-primary-color: rgb(17,17,17);
     --bg-secondary-color: rgb(34,34,34);
     --bg-active-color: rgb(233,233,233);
     --bg-danger-color: rgb(200,50,50);
-    --bg-success-color: rgb(30,167,30);
+    --bg-success-color: rgb(30,167,30); */
+    
+    --bg-primary-color: rgb(47, 47, 228);
+    --bg-secondary-color: rgb(8, 6, 22);
+    /* --bg-active-color: rgb(232, 219, 179); */
+    --bg-active-color-img: rgb(255,255,191);
+    --bg-active-color:  rgb(233,233,233);
+    --bg-danger-color: rgb(206, 38, 38);
+    --bg-success-color: rgb(33, 183, 33);
 
     /* text colors */
+    /* --text-primary-color: rgb(237,237,237);
+    --text-secondary-color: rgb(200,200,200);
+    --text-tertiary-color: rgb(150,150,150);
+    --text-active-color: rgb(24,24,24); */
     --text-primary-color: rgb(237,237,237);
     --text-secondary-color: rgb(200,200,200);
     --text-tertiary-color: rgb(150,150,150);
     --text-active-color: rgb(24,24,24);
 
     /* paddings */
+    --padding-sm0: 0.4rem;
     --padding-sm: 0.5rem;
     --padding-md: 1rem;
     --padding-lg: 1.5rem;
@@ -28,6 +41,7 @@
 
     /* gutter */
     --gutter-sm: 0.5rem;
+    --gutter-sm2: 0.7rem;
     --gutter-md: 1rem;
     --gutter-lg: 1.5rem;
     --gutter-xl: 2rem;

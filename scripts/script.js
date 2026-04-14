@@ -340,7 +340,7 @@ const presets = {
 
 Object.keys(presets).forEach(presetName => {
     const presetButton = document.createElement("button")
-    presetButton.classList.add("btn")
+    presetButton.classList.add("btn-pre")
     presetButton.innerText = presetName
     presetsContainer.appendChild(presetButton)
 

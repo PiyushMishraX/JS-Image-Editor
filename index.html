@@ -18,14 +18,18 @@
       <section>
         <div class="left">
           <div class="top">
+            
+            <button class="btn" id="reset-btn">Reset</button>
+
             <label for="image-input" class="btn">
               Choose image
               <input type="file" id="image-input" accept="image/*" hidden />
               <!-- hide choose file square -->
             </label>
-            <button class="btn" id="reset-btn">Reset</button>
+
             <button class="btn" id="download-btn">Download</button>
           </div>
+          
           <div class="bottom">
             <div class="placeholder">
               <!-- using icon as placeholder from remix icon .com -->
@@ -36,6 +40,10 @@
           </div>
         </div>
         <div class="right">
+          <h2>Presets</h2>
+          <div class="presets">
+
+          </div>
             <h2>Filters</h2>
             <div class="filters">
 
@@ -48,10 +56,6 @@
                     <p>Brightness</p>
                     <input name="brightness" value="100" type="range" min="0" max="200">
                 </div> -->
-
-            </div>
-            <h2>Presets</h2>
-            <div class="presets">
 
             </div>
         </div>
