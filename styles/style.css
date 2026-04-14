@@ -97,6 +97,15 @@ main section .right {
     gap: var(--gutter-sm2);
     /* background-color: rgb(242, 26, 26); */
     padding-bottom: 35px;
+
+    
+    max-height: 95vh;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--bg-active-color) transparent;
+}
+main section .right::-webkit-scrollbar {
+    width: 6px; 
 }
 
 main section .right .filters{
